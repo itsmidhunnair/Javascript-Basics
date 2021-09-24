@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+<head>
+    <title>Getting Started</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <style>
+        body
+        {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+
+<!----------------Javascript---------------------->
+    <script>
+       const original = 'midhun';
+       const clone = 'MIDHUN';
+
+       console.group('String');
+            console.log(original == 'midhun');//true
+            console.log(original == clone);//false (because js is case-sensitive)
+            console.log(original == clone.toLowerCase());//true because the ".tolowercase()" method converts the string to lowercase.   
+       console.groupEnd();
+       
+       const num1 = 10;
+       const num2 = '10';
+       
+       console.group('Numbers');
+            console.log(num1 == num2);//true because == allows js to convert the type so (num1) 10 number will be converted into 10 String
+            console.log(num1 === num2);//false because === does'nt allows conversion
+            console.log(num1 != num2);//false because they are equal
+            console.log(num1 !== num2);//true because conversion is not allowed and so they are not equal
+       console.groupEnd();
+       
+       let what; //undefined
+       let thing = null;
+
+       console.group('Booleans');
+            console.log(Boolean(original));//true because it has value
+            console.log(Boolean(''));//true because it does not have a value
+            console.log(Boolean(what));//false
+            console.log(Boolean(thing));//false
+            console.log(Boolean(num1));//true because it has value
+            console.log(Boolean(num2));//true because it has value
+            console.log(Boolean({}));//true because its object even if it is empty
+            console.log(Boolean([]));//true because its string even if it is empty
+       console.groupEnd();
+
+       const firstArr = [1, 2, 3];
+       const secondArr = [1, 2, 3];
+       const firstObj = { color: 'red' };
+       const secondObj = { color: 'red' };
+    
+        console.group('Objects and Arrays');
+            console.log(firstArr == secondArr);//false 
+            console.log(firstArr === secondArr);//false 
+            console.log(firstObj == secondObj);//false 
+            console.log(firstObj === secondObj);//false 
+            //because for js each object and arrays are different
+        console.groupEnd();
+
+        console.group('And Or');
+            console.log(Boolean('abcd') && Boolean('efgh'));//true because both are true as both have some values
+            console.log(Boolean('abcd') && Boolean(''));//false because one is true and other is false as it does not have any value
+            console.log(Boolean('abcd') || Boolean(''));//true because there is a OR Operator and in that one is true and other is false as it does not have any value
+            console.log(Boolean('') || Boolean(''));//true because there is a OR Operator an in that false false gives false                     
+        console.groupEnd();
+    </script>
+</body>
+</html>
