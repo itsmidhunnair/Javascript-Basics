@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Getting Started</title>
+    <style>
+        body
+        {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dogs-list"></div>
+
+
+<!----------------Javascript---------------------->
+    <script>
+    //    const name = prompt('Enter your name'); //<--remove from comment
+       const username = 'mn';
+
+       //if statement
+    if (name == 'midhun' || name == 'nair')//if statement can be followed by AND & OR operator
+        {
+            alert('Hello! Midhun Nair');
+        }
+    else if (name == 'mn')
+        {
+            alert('Hello! MN');
+        }
+
+    else
+        {
+            console.log('not midhun');
+        }
+
+
+       
+        const dogsList = document.querySelector('.dogs-list');
+        const dogs = [
+            {name: 'bruce', type: 'abcd'},
+            {name: 'mike', type: 'efgh'},
+            {name: 'marcko', type: 'ijklmno'},
+        ];
+
+    //--------------for loop--------------//
+        //remove from comments for output
+
+       /*
+        for (let i = 0; i < dogs.length; i++)
+            {
+                //grab the dog
+                const dog = dogs[i];
+                const dogData = document.createElement('div');
+                dogData.classList.add('jumbotron', 'text-center')
+                dogData.innerText = `${dog.name} is a ${dog.type}`;
+                dogsList.appendChild(dogData);
+            }
+       */    
+        
+       //---------while loop----------//
+    /*    let i = 0; //in while loop value of 'i' is externally declared
+            while (i < dogs.length)
+                {
+                    //grab the dog (same as above)
+                    const dog = dogs[i];
+                    const dogData = document.createElement('div');
+                    dogData.classList.add('jumbotron', 'text-center')
+                    dogData.innerText = `${dog.name} is a ${dog.type}`;
+                    dogsList.appendChild(dogData);
+
+                    i++;    
+                }
+    */            
+
+       //-----------do while loop------------//
+    /*        let i = 0;
+            do
+                {
+                    //grabe the dog (same as above)\
+                    const dog = dogs[i];
+                    const dogData = document.createElement('div');
+                    dogData.classList.add('jumbotron', 'text-center');
+                    dogData.innerText = `${dog.name} is a ${dog.type}`;
+                    dogsList.appendChild(dogData);
+
+                    i++;
+                } while (i < dogs.length);    
+    */
+
+       //for...of iterator
+            for (let dog of dogs)
+                {
+                    //no need to define const dog = dogs[i]; because its already defined in the for as parameter
+                    const dogData = document.createElement('div');
+                    dogData.classList.add('jumbotron', 'text-center');
+                    dogData.innerText =  `${dog.name} is a ${dog.type}`;
+                    dogsList.appendChild(dogData);
+                }
+
+
+
+    </script>
+</body>
+</html>
