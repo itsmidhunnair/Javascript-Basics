@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Getting Started</title>
+    <style>
+        body
+        {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="jumbotron text-center">
+    <button type="button" class="btn btn-danger" onclick="saySomething('this is the first button')">My Button</button>
+    <button type="button" class="btn btn-danger" onclick="saySomething('this is the second button')">My Button</button>
+</div>
+
+<!----------------Javascript---------------------->
+    <script>
+        function sayHello() //function defined
+            {
+                console.log('good bye');
+            }       //this function returns hello whenever the function is called. function can be called by simply writing 'function_name();' here: sayHello(); 
+
+
+                sayHello();
+                sayHello();
+                sayHello();
+                sayHello();
+                sayHello(); 
+                // main advantage of function first we need to individually replace 5 texts and using function we just need to replace 1 line and it takes effect on 5 lines.
+                
+                function saySomething(message = 'default message') //function defined
+                    {
+                        console.log(message);
+                    }    
+    
+                        saySomething();
+                        saySomething();
+                        saySomething();
+                        saySomething();
+                        saySomething(); 
+                
+                
+                function saySomethingagain(message = 'default message') //function defined
+            {
+                console.log(message);
+            }    
+        
+                saySomethingagain('hello'); //if something is passed as message here then it will return that message else it will return the default message
+                saySomethingagain();
+                saySomethingagain();
+                saySomethingagain();
+                saySomethingagain(); 
+                
+                
+                function saySomethingagain1(message = 'default message', abc = false) //function defined
+            {
+                if(abc)//if value of abc is true then this will trigger
+                {
+                console.log(`%c${message}`,`font-size:5px`);
+                }
+                else
+                {
+                    console.log(message);
+                }
+            }    
+        
+                saySomethingagain1('hello', true); //if something is passed as message here then it will return that message else it will return the default message
+                saySomethingagain1('my name is midhun', true);
+                saySomethingagain1();
+                saySomethingagain1();
+                saySomethingagain1(); 
+
+
+                function squared(a)
+                {
+                    return a * a;
+                }
+                const newSquared = squared(3);
+                console.log(newSquared);
+                
+                const double = function(a) //functions can stored in a variable with even giving function name
+                {
+                    return a * 2;
+                }
+                console.log(double(3));
+
+                const otherDouble = double;//as the function is stored in variable it can also be transferred to another variable.
+
+                console.log(otherDouble(5));     
+                punch();    //it is called before the function is defined
+               //thats because functions get hoisted
+               //while this wont work for fouble example as it is the variable not the fuction 
+                function punch()
+                {
+                    console.log('punch here!');
+                }
+        
+    </script>
+</body>
+</html>
