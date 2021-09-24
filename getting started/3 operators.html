@@ -16,120 +16,86 @@
 
 <!----------------Javascript---------------------->
     <script>
-        //strings
-        'this is my string';
-        'my second string';
-        "my name is mn";
-
-        //numbers
-        10;
-        500;
-        3.14;
-
-        //booleans
-        true;
-        false;
         
-        console.log(Boolean('this is my string'))
-        console.log(Boolean(''))
+        const a = 10,
+        b = 3,
+        c = 15;
+        //OR//
+        //const a = 10,
+        //const b = 3,
+        //const c = 15,
+        //both are valid
 
-        //specials
-        undefined;
-        let user1 = 'mn';
+        const d = '5',
+        e = 'midhun',
+        f = 'nair';
+
+        let g = 6;
+        h = 8;
+        i = '5';
+
+        console.group('Addition'); //groups will make a formulated look in the console (simillar to drop down)
+
+            //-----------------addition------------------------//
+
+            console.log(a + b);//13 in console
+            console.log(a + c);//25 in console
+            console.log(e + f);//midhunnair in console, addition can also be done of strings
+            console.log(e + ' ' + f);//midhun nair in console, just add a blank space
+
+            console.log(a + d)//105 because here d is string and the value of that string is 5 (the o/p will be string)
+            
+            //'typeof' can be used in console to check the type (whether its a number or string)
+            //eg: typeof (a)
+
+            console.log(e + ' created this');// midhun created this string can be added with the variable
+
+        console.groupEnd();
+
+
+    
+        console.group('Substraction');
+            //-----------------Subtraction------------------------//
+
+            console.log(a - b);//7 in console
+            console.log(a - c);//-5 in console
+            console.log(e - f);//NaN because its string
+        console.groupEnd();
         
-        console.log(user1);
         
-        undefined;
-        let user2;
-        
-        console.log(user2);
-        
-        null;
-        let user3 = null;
-        
-        console.log(user3);
-       
-        NaN; //not a number
-        let user4 = null;
-        
-        console.log(user4);
+    console.groupCollapsed('Multiplication'); //group collapsed will not allow to open a group on refresh
+            //-----------------Multiplication------------------------//
 
-        //OBJECTS (for key and value)
-        const user5 = {
-            name: 'Midhun',
-            username: 'MN'
-        };
+            console.log(a * b);//30 in console
+            console.log(a * c);//150 in console
+            console.log(a * 3);//30 in console
+            console.log(e * f);//NaN because its string
 
-        //array (for storing data one after the another)
-        const user6 = [
-            'midhun',
-            'nair',
-            'mn'
-        ];
-        const mixedarray = [
-            'midhun',
-            '1',
-            'nair',
-            '2',
-        ];
+    console.groupEnd();
 
-        //output of objects
-        console.log(user5);
-        console.log(user5.name);
-        console.log(user5.username);
-
-        //output of string
-        console.log(user6);
-        console.log(user6.name); //will be undefined because there is no key like in object
-        console.log(user6[0]); //the only way to fetch data from string
-        console.log(user6[1]); //the only way to fetch data from string
-        
-        //both objects and array can be also accessed from console by just directly typing const name like 'user5'
-        
-        //arrays to store objects (array of objects)
-        const user7 = [
-            { name: 'midhun'},
-            { name: 'nair'},
-            { name: 'mn'}
-        ]
-
-        //output of array of objects
-        console.log(user7);//to access whole array
-        console.log(user7[0]);//to access the a specific array
-        console.log(user7[2].name);//to access a specific object of a specific array
-
-        //declaring variables
-        var thing = 'first'//in ES-5 version (version before the latest version) [should not be used anymore]
-
-        const otherThing = 'second'; //const means we cannont reassign these
-        //eg
-        //otherThing = 'new string'; // will give an error "assignment to constant variable"
+    console.group('Incrementing');
+            console.log(g + 1);//7
+      //      console.log(a++);      //wil get a error because a++ will overwrite the value of a with an increment but as 'a' is constant it cannot be done
+            console.log(g++);//6 (post increment)
+            console.log(g);//7
+            console.log(++g);//8 (pre increment)
+            
+    console.groupEnd();
+  
+  
+    console.group('Decrementing');
+            console.log(g - 1);//7
+            console.log(g--);//8 (post Decrement)
+            console.log(g);//7
+            console.log(--g);//6 (pre Decrement)
+            
+    console.groupEnd();
 
 
-        let newThing = 'third'; //we can reassign a variable in let
-        //eg
-        newThing = 'new string'//enter 'newThing' in Console and no errors
-
-        //reassigning can be done of a string with object (property of a string) in const 
-        const otherThing1 = 
-        { 
-            name: 'midhun'
-        };
-
-        //reassigning
-        
-        otherThing1.name = 'nair';//check in console, it is allowed
-        
-        //------------------------
-        let myvariable;
-        //-
-        //- you can create a variable first then define it later
-        //-
-        //-
-        myvariable = 'something';//check in console
-
-        
-
+    console.group('h += g');
+            console.log(h += g);//14 => (h = h + g)
+            console.log(i += f);//5nair =>it also works for strings
+    console.groupEnd();
     </script>
 </body>
 </html>
