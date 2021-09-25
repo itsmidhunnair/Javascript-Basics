@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Getting Started</title>
+    <style>
+        body
+        {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!----------------Javascript---------------------->
+    <script>
+        const hero = 
+        {
+            name: 'Bruce Wayne',
+            alias: 'Batman',
+            catchphrase: 'To the Batcave!',
+            speak: function()
+            {
+                return 'Attention! ' + this.catchphrase;
+            },
+
+            attack: function(sound) 
+            {
+                return `(punches bad guy) ${sound}`;
+            }
+            
+        };
+
+        //access a property
+        const thingToLookFor = 'alias';
+
+        console.log(hero.name);//Bruce Wayne
+        console.log(hero['name']);//B ruce Wayne
+        console.log(hero[thingToLookFor]);//B ruce Wayne-- this will be the same as above
+        console.log(hero.thingToLookFor);//undefined because it is taking thingToLookFor as a property
+        
+        //accessing methods (functions)
+        console.log(hero.speak);// to check the function in console
+        console.log(hero.speak());
+        console.log(hero.attack('POWWWW'));
+
+        console.log('this is my string'.toUpperCase());//here this is my string acts like an objects
+    </script>
+</body>
+</html>
