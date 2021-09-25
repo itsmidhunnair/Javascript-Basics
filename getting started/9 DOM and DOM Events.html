@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Getting Started</title>
+    <style>
+        body
+        {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Option 1-->
+    <div class="jumbotron text-center">
+        <button class="btn btn-danger" onclick="goCoocoo()">
+        Go Cooco
+        </button>
+    </div>
+
+    <!-- Option 2: Use events directly on the element in js-->
+    <div class="jumbotron text-center">
+        <button class="btn btn-danger coffee-btn">
+        Go Coffee
+        </button>
+        <button class="btn btn-danger coffee-btn">
+        Go Coffee
+        </button>
+        <button class="btn btn-danger coffee-btn">
+        Go Coffee
+        </button>
+    </div>
+
+<!-- Option 3 (Using addEventListiner)-->
+<div class="jumbotron text-center">
+    <button class="btn btn-primary btn2">
+        Not Listening
+    </button>
+</div>
+
+<!----------------Javascript---------------------->
+    <script>
+        //1 grab elements from the DOM
+        //2 attach event lisitners
+
+    /*
+         const body = document.querySelector('body');
+         body.style.backgroundColor = '#c00c00';
+    */    
+        //is equivalent to
+
+    /*    const body = document.body;
+        body.style.backgroundColor = '#c00c00';
+    */    
+        //is equivalent to
+
+    /*    document.body.style.backgroundColor = '#c00c00'; */
+
+
+
+        //Option 1 =========================================
+        function goCoocoo() 
+        {
+            document.body.style.backgroundColor = '#c00c00';    
+        }
+
+        //Option 2 ==========================================
+    /*    const coffeeButton = document.querySelector('.coffee-btn'); //this query selector grabs only one button
+        coffeeButton.onclick = 
+                function() 
+                    {  
+                        document.body.style.backgroundColor = '#C0FFEE';   
+                    }
+    */
+    /*=
+        coffeeButtons.onmouseenter = goCoocoo;
+        
+        //coffeeButton.onmouseleave = coffeeButton.onclick;
+                    //------both works-------//
+        coffeeButton.onmouseleave = function() 
+                    {
+                        document.body.style.backgroundColor = '#000000';
+                    }
+    */    
+
+    function getCoffee() 
+        {
+            document.body.style.backgroundColor = '#C0FFEE';
+        }
+
+     
+        const coffeeButtons = document.querySelectorAll('.coffee-btn'); //this query selector will grab all the button
+            coffeeButtons.onclick = 
+                function() 
+                    {  
+                        document.body.style.backgroundColor = '#C0FFEE';  
+                    }
+    
+
+    //both can be used to select multiple button 👆👇
+   
+    coffeeButtons.forEach(function(button) 
+        {
+          button.onclick = getCoffee;  
+        }
+        
+    );
+    
+    //=================== Option 3 =======================================
+    
+    const btn2 = document.querySelector('.btn2');
+    function notListening() 
+        {
+            document.body.style.backgroundColor = 'lightblue'     
+        }
+        btn2.addEventListener('click', notListening);
+        btn2.addEventListener('mouseenter', goCoocoo);
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => button.addEventListener('mouseleave', notListening));
+    
+    </script>
+</body>
+</html>
