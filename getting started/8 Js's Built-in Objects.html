@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Getting Started</title>
+    <style>
+        body
+        {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!----------------Javascript---------------------->
+    <script>
+
+        console.log('this is my string'.toUpperCase()); //here the text acts as a object
+        console.log(String('this is my string').toUpperCase());//and here the text acts as the string -- here string is built in object which converts that text object into string
+        //both are the same thing
+
+        //eg to prove it
+        const first = 'this is my string';
+        const second = String('this is my string');
+
+        console.log(first == second);//true
+        console.log(first === second);//true
+
+        console.groupCollapsed('Primitives vs Objects');
+            console.log(first == second);//true
+            console.log(
+                typeof first,//string
+                typeof String('this is a string'),//string
+                typeof new String()//object -- because it gets converrted back to string
+            );
+        console.groupEnd();
+
+        //strings
+        const sentence = 'this is my sentence';
+        console.groupCollapsed('String');
+            console.log(first.toUpperCase());//THIS IS A STRING
+            console.log(second.toLowerCase());//this is my string
+            console.log(sentence.startsWith('this is'));//true
+            console.log('🍻'.repeat(20));
+            console.log('look at me goo       '.trim());//will  remove the extra spaces in the sentence from console
+
+        console.groupEnd();
+
+        //numbers and math
+        console.groupCollapsed('Numbers and Math');
+        //    console.log(1.toString());//error because js don't recognize it as a number
+            console.log(1..toString());//now it is equivalent ot 1.0
+            console.log((1).toString());
+            console.log(Number.isInteger(5));//true
+            console.log(Number.isInteger(5.34));//false because it is decimal
+            console.log((1.554454).toFixed(2));//1.55
+
+            console.log(
+                Math.random(),//will generate a random number
+                Math.random().toFixed(2),//will generate a random number with two decimal point
+                Math.ceil(1.56),//will round it up //2
+                Math.floor(1.56),//will round it down //1
+            );
+        console.groupEnd();
+
+        //arrays
+        const myArr = ['midhun', 'nair', 'mn'];
+        console.group('Arrays');
+            console.log(myArr.length);//3 length of array
+            console.log(myArr);//shows full array
+            console.log(myArr.join());//midhun,nair,mn --joins all enelement of array
+            console.log(myArr.join('-'));//midhun-nair-mn --parameters can be used to separate array
+            console.log(myArr.push('mmn'));//will push new element to array and show only the new length
+            console.log(myArr.push('mmn'), myArr);//will push new element to array and show the new length and all the elements
+            console.log(myArr.pop('mmn'), myArr);//will pop out the mentioned element from array and show only the new array
+            //LIFO
+
+            //functional programming
+            myArr.forEach(function(user) 
+            {
+                console.log(user);   
+            });
+            
+            //equivalent of
+            myArr.forEach((user) => console.log(user));
+
+        console.groupEnd();
+
+    </script>
+</body>
+</html>
