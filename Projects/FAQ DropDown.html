@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>FAQ DropDown</title>
+    <style>
+        body,
+        .jumbotron {
+            padding: 30px;
+            width: auto;
+        }
+        
+        html {
+            overflow-y: scroll;
+        }
+        
+        body {
+            background-color: #EFEFEF;
+        }
+        
+        h1 {
+            color: #c00c00;
+            text-align: center;
+            padding-bottom: 35px;
+        }
+        
+        a {
+            color: #c00c00;
+        }
+        
+        h4 {
+            text-align: center;
+            padding-top: 35px;
+        }
+        
+        .dropDown {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 30px;
+        }
+        
+        .question {
+            border-top: 1px solid #e2e2e2;
+            padding: 30px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .question h2 {
+            font-size: 25px;
+            margin: 0;
+            color: #c00c00;
+        }
+        
+        .question .icon {
+            position: absolute;
+            right: 20px;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #c00c00;
+            transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+        }
+        
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+        }
+        
+        .answer p {
+            padding: 20px;
+        }
+        
+        .dropDown li.open .question .icon {
+            transform: rotate(180deg);
+        }
+        
+        .dropDown li.open .answer {
+            max-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Sample DropDown Style for FAQs
+    </h1>
+    <div class="container">
+        <div class="dropDown">
+            <ul class="list-unstyled">
+                <li class="open">
+                    <div class="question">
+                        <h2>My first Question?</h2>
+                        <span class="glyphicon glyphicon-chevron-down icon"></span>
+                    </div>
+                    <div class="answer">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="question">
+                        <h2>My second Question?</h2>
+                        <span class="glyphicon glyphicon-chevron-down icon"></span>
+                    </div>
+                    <div class="answer">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="question">
+                        <h2>My third Question?</h2>
+                        <span class="glyphicon glyphicon-chevron-down icon"></span>
+                    </div>
+                    <div class="answer">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="question">
+                        <h2>My fourth Question?</h2>
+                        <span class="glyphicon glyphicon-chevron-down icon"></span>
+                    </div>
+                    <div class="answer">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <h4> Made by <a href="http://midhunnair.ml">Midhun Nair </a></h4>
+    <!----------------Javascript---------------------->
+    <script>
+        const dropDown = document.querySelector('.dropDown');
+        const items = dropDown.querySelectorAll('li');
+        const questions = dropDown.querySelectorAll('.question');
+
+        function toggleDropDown() {
+            const thisItem = this.parentNode;
+
+            items.forEach(item => {
+                if (thisItem == item) {
+                    thisItem.classList.toggle('open');
+                    return;
+                }
+                item.classList.remove('open');
+            });
+
+            //   thisItem.classList.toggle('open');
+            console.log(thisItem);
+        };
+
+        questions.forEach(question => question.addEventListener('click', toggleDropDown));
+    </script>
+</body>
+
+
+</html>
